@@ -149,8 +149,28 @@ Solution: {solution_text}
 
 ## How you must work:
 1. **Think through the mystery first** 
-    — use the conversation history and question to decide if the information could directly or indirectly help identify the solution.
-    — use the known mystery and known solution to decide if the information could directly or indirectly help identify the solution.
+    - use the conversation history and question to decide if the information could directly or indirectly help identify the solution {solution_text}.
+    - think logically: 
+        - Does the input make sense in the context of the mystery {mystery_text} and its known solution {solution_text}? 
+            - If not, it is **irrelevant**. If it does make sense, it could be a **yes** or **no** answer. 
+            - A question should be answered with **yes** if it is relevant and correct towards a solution. 
+            - A question should be answered with **no** if it is relevant but incorrect towards a solution.
+        - Example 1:
+            - Mystery: "Emma left her cupcake on the table, but when she came back, only the wrapper was there. What happened?"
+            - Solution: "Her dog ate the cupcake while she was gone."
+            - Possible questions:
+                - "Does she have siblings" -> The detective is trying to assess if someone from the family did it; it's **irrelevant** since it wasn't a sibling who did it.
+                - "Did someone eat it" -> The detective is getting closer, someone did eat it, even the solution being an animal; it's **yes**.
+                - "Does the family have a pet" -> The detective is trying to assess if it was a pet, getting in the right track; it's **yes**.
+                - "The dog ate her cupcake" -> The detective is right!
+        - Example 2:
+            - Mystery: "The picture in the hallway was upside down, but no one admitted touching it. Why?"
+            - Solution: "The cat knocked it over and it was rehung the wrong way."
+            - Possible questions:
+                - "Was it in a home" -> The detective is trying to assess the environment. Since a cat did it and a cat lives in a home, it's **yes**.
+                - "Does a pet live in the home" -> The detective is getting closer as a cat is a pet; it's **yes**.
+                - "Was the picture hung upside down by mistake" -> The detective is trying to assess if someone did it on purpose; it's relevant since it shows a person wasn't the culprit; it's **no**.
+                - "The family cat knocked the picture and someone hung it wrong" -> The detective is right!
 2. You may ONLY respond with exactly one of these three words: "Yes", "No", or "Irrelevant".
 3. Do NOT add any other words, punctuation, emojis, or explanations.
 4. If the question is not answerable with Yes/No, reply: "Only Yes or No questions!"
@@ -158,9 +178,7 @@ Solution: {solution_text}
    - It directly points toward the cause, method, or reason behind the mystery, OR
    - It could lead to clues that help uncover the cause (even indirectly, like asking if there’s a pet when a pet could cause the event).
 6. A question is **irrelevant** if it has no realistic connection to solving the mystery.
-7. A question should be answered with **yes** if it is relevant and correct towards a solution. 
-8. A question should be answered with **no** if it is relevant and incorrect towards a solution.
-9. Never reveal hints or the solution unless the player explicitly asks for them through the game’s buttons.
+7. Never reveal hints or the solution unless the player explicitly asks for them through the game’s buttons.
 
 Conversation so far:
 {history}
@@ -189,7 +207,7 @@ def is_solution_guess(user_input, solution_variants):
         answer = answer.strip().lower()
 
         similarity = difflib.SequenceMatcher(None, guess, answer).ratio()
-        if similarity > 0.7:
+        if similarity > 0.65:
             return True
 
         answer_clean = re.sub(r"[^\w\s]", "", answer)

@@ -5,7 +5,7 @@
       "mystery": "Emma left her cupcake on the table, but when she came back, only the wrapper was there. What happened?",
       "solution": "Her dog ate the cupcake while she was gone.",
       "solution_variants": [
-        "Her dog ate the cupcake while she was gone.",
+        "Her dog ate the cupcake.",
         "Her dog snuck the cupcake and ate it.",
         "The cupcake disappeared because the dog got to it.",
         "While she was away, the dog finished the cupcake."
@@ -17,7 +17,7 @@
       "mystery": "Liam’s sneakers were in the middle of the yard, even though he left them by the door. How?",
       "solution": "His brother used them as 'goalposts' for soccer.",
       "solution_variants": [
-        "His brother used them as 'goal' for soccer.",
+        "His brother used them as 'goal' for football.",
         "His sibling moved the shoes to play soccer with them.",
         "The shoes were used as goal markers by his younger sibling.",
         "The little brother set up the shoes as part of a game."
@@ -42,7 +42,7 @@
       "solution": "His walkie-talkie was hidden inside the teddy.",
       "solution_variants": [
         "His walkie-talkie was hidden inside the teddy.",
-        "A walkie-talkie inside the teddy made it talk.",
+        "A walkie talkie inside the teddy made it talk.",
         "The teddy had a walkie-talkie placed inside it.",
         "The sound came from a walkie-talkie hidden in the bear."
       ],
@@ -53,7 +53,7 @@
       "mystery": "The picture in the hallway was upside down, but no one admitted touching it. Why?",
       "solution": "The cat knocked it over and it was rehung the wrong way.",
       "solution_variants": [
-        "The cat knocked it over and it was rehung the wrong way.",
+        "A cat knocked over the picture and someone hung it upside down.",
         "The cat made the picture fall and it was put back upside down.",
         "A cat tipped it over and it was re-hung incorrectly.",
         "The picture fell because of the cat and got put back upside down."
