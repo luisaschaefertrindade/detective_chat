@@ -1,0 +1,6 @@
+# Streamlit specific
+.streamlit/
+
+# Environment variables
+.env
+.env.* 
